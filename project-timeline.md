@@ -43,6 +43,18 @@ below.
 
 ## Entries
 
+### 2026-08-04 — Add Schema skill (data traceability conventions)
+
+- **Task**: Create a portable agent skill that enforces database schema traceability columns (created_at, updated_at, deleted_at, created_by, updated_by, deleted_by) with consistent naming, proper constraints, FK relationships, and soft-delete as the default. The skill should detect naming inconsistencies, suggest unification, and generate migrations using the project's revision tool.
+- **Options considered**: Embed traceability rules inside the gated-agentic-development skill (35% confidence — overloads that skill's scope); create a standalone schema skill (92% confidence — clean separation, directly reusable across any project with a database).
+- **Chosen approach**: Standalone portable skill following the same directory/file pattern as existing skills.
+- **Human-in-the-loop**: No — confidence cleared the gate and the task closely matches the existing skill-creation pattern.
+- **Implementation summary**: Added the `schema` SKILL.md to all four agent directories with rules for required traceability columns, naming convention detection, unification workflow, migration generation steps, and documentation requirements. Updated the repository README with the new skill table.
+- **Tests added**: None — documentation-only change with no executable behavior.
+- **Design pitfalls / shortcomings**: The skill prescribes `correlation_id` only as a recommendation for distributed systems rather than a hard requirement, since not all projects need it.
+- **Residual risks**: Projects with legacy schemas may require large rename migrations; the skill mitigates this by requiring human approval before executing unification renames.
+- **Follow-ups**: Consider adding ORM-specific example snippets (Prisma schema block, Alembic mixin, Rails concern) if users request concrete templates.
+
 ### 2026-08-04 — Add Be Simple skill
 
 - **Task**: Add a communication skill that instructs agents to explain things plainly, match the developer's writing style and language proficiency, and never pad responses with filler or verbosity.
