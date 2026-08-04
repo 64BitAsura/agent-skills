@@ -5,6 +5,22 @@ for coding agents.
 
 ## Skills
 
+### `mission-control`
+
+A coordination-first workflow for tasks that need context validation, durable
+plan recording, and explicit todo tracking so work can survive session crashes
+and multiple agents do not overlap.
+
+The same skill content is provided for each supported agent, since all of
+them implement the portable Agent Skills standard:
+
+| Agent           | Path                                                   |
+|-----------------|---------------------------------------------------------|
+| Claude Code     | `.claude/skills/mission-control/SKILL.md`               |
+| Cursor          | `.cursor/skills/mission-control/SKILL.md`               |
+| Factory Droid   | `.factory/skills/mission-control/SKILL.md`              |
+| GitHub Copilot  | `.github/skills/mission-control/SKILL.md`               |
+
 ### `gated-agentic-development`
 
 A gated, human-in-the-loop workflow for planning and implementing
