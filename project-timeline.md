@@ -43,6 +43,18 @@ below.
 
 ## Entries
 
+### 2026-08-04 — Add Be Simple skill
+
+- **Task**: Add a communication skill that instructs agents to explain things plainly, match the developer's writing style and language proficiency, and never pad responses with filler or verbosity.
+- **Options considered**: Embed the rules in each existing skill's "Notes for agents" section (40% confidence — scatters the rules, easy to miss); add a standalone portable skill that stacks with other skills (90% confidence — clean separation, reusable).
+- **Chosen approach**: Standalone skill so it can be applied independently or layered on top of any workflow skill.
+- **Human-in-the-loop**: No — confidence cleared the gate and the task matches the existing skill-creation pattern.
+- **Implementation summary**: Added the `be-simple` SKILL.md to all four agent directories with ten core rules covering brevity, filler avoidance, style-matching, and language-proficiency adaptation. Updated the repository README with the new skill table.
+- **Tests added**: None — documentation-only change with no executable behavior.
+- **Design pitfalls / shortcomings**: "Short" is subjective; different developers may want different thresholds. The skill gives a rough ~15-line guideline but can't enforce it mechanically.
+- **Residual risks**: Agents may over-compress and drop useful detail. The skill mitigates this with rule 5 ("keep all facts and meaning").
+- **Follow-ups**: Consider adding concrete before/after examples if users want a reference.
+
 ### 2026-08-04 — Add Mission Control skill
 
 - **Task**: Add a new portable skill named Mission Control to help agents check context strength before planning, persist plans in repository docs for crash recovery, and coordinate execution with explicit todo actions.

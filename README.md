@@ -50,5 +50,18 @@ them implement the portable Agent Skills standard:
 | Factory Droid   | `.factory/skills/gated-agentic-development/SKILL.md`    |
 | GitHub Copilot  | `.github/skills/gated-agentic-development/SKILL.md`     |
 
+### `be-simple`
+
+A communication skill that makes agent responses short, direct, and
+fact-preserving. Adapts to the developer's prompt style and language
+proficiency. No filler, no poetry, no textbook prose — just clear answers.
+
+| Agent           | Path                                                   |
+|-----------------|--------------------------------------------------------|
+| Claude Code     | `.claude/skills/be-simple/SKILL.md`                     |
+| Cursor          | `.cursor/skills/be-simple/SKILL.md`                     |
+| Factory Droid   | `.factory/skills/be-simple/SKILL.md`                    |
+| GitHub Copilot  | `.github/skills/be-simple/SKILL.md`                     |
+
 See `project-timeline.md` for the running log of decisions this skill
 produces.
