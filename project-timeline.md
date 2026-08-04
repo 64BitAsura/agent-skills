@@ -43,5 +43,17 @@ below.
 
 ## Entries
 
+### 2026-08-04 — Add Mission Control skill
+
+- **Task**: Add a new portable skill named Mission Control to help agents check context strength before planning, persist plans in repository docs for crash recovery, and coordinate execution with explicit todo actions.
+- **Options considered**: Reuse the existing gated planning skill with minor wording changes (55% confidence); add a separate coordination-focused skill alongside the existing planning skill (92% confidence); create agent-specific variants with different wording (40% confidence).
+- **Chosen approach**: Added a separate portable skill so the repository keeps the existing gated planning workflow intact while introducing a distinct coordination-oriented workflow with a clearer name and purpose.
+- **Human-in-the-loop**: Yes — the human selected the Mission Control name before implementation.
+- **Implementation summary** (language/framework agnostic): Added the new skill in every supported agent location, documented its positioning and four-step workflow, and updated the repository overview so users can discover it easily.
+- **Tests added**: No automated tests were added because the change is documentation-only and introduces no executable behavior.
+- **Design pitfalls / shortcomings**: The skill intentionally stays tool-agnostic, so exact task tracking behavior still depends on the hosting agent environment.
+- **Residual risks**: Agents may interpret durable plan storage differently if a repository lacks a clearly preferred planning document, but the skill mitigates this by emphasizing a single source of truth and reusable template.
+- **Follow-ups**: Consider adding example mission documents or a dedicated shared planning file if future users want a stricter convention.
+
 _No entries yet. The first agent to complete a gated task using this skill
 should add its entry above this line._
