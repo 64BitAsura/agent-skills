@@ -63,5 +63,21 @@ proficiency. No filler, no poetry, no textbook prose — just clear answers.
 | Factory Droid   | `.factory/skills/be-simple/SKILL.md`                    |
 | GitHub Copilot  | `.github/skills/be-simple/SKILL.md`                     |
 
+### `schema`
+
+A prescriptive skill that enforces data traceability conventions on every
+database table or collection. Requires `created_at` (non-null), `updated_at`,
+`deleted_at` (soft-delete by default), and corresponding `*_by` foreign-key
+columns. Detects and unifies inconsistent naming patterns, generates proper
+migration scripts using the project's existing revision tool, and records
+decisions in `project-timeline.md`.
+
+| Agent           | Path                                                   |
+|-----------------|--------------------------------------------------------|
+| Claude Code     | `.claude/skills/schema/SKILL.md`                        |
+| Cursor          | `.cursor/skills/schema/SKILL.md`                        |
+| Factory Droid   | `.factory/skills/schema/SKILL.md`                       |
+| GitHub Copilot  | `.github/skills/schema/SKILL.md`                        |
+
 See `project-timeline.md` for the running log of decisions this skill
 produces.
